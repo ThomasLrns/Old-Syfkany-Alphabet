@@ -1,0 +1,107 @@
+<!-- Removed duplicate Guess the Word Quiz button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="page-title">Writing System in Old Syfkany</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="lang.js"></script>
+        <script>
+        function setPageTitleByLang(lang) {
+            var titleText = (lang === 'fr') ? "Système d'Écriture en Syfkany Ancien" : "Writing System in Old Syfkany";
+            var titleEl = document.querySelector('title');
+            if (titleEl) titleEl.textContent = titleText;
+            document.title = titleText;
+            var mainTitleEl = document.getElementById('main-title');
+            if (mainTitleEl) mainTitleEl.textContent = titleText;
+            var introTextEl = document.getElementById('intro-text');
+            if (introTextEl) {
+                introTextEl.textContent = (lang === 'fr')
+                    ? "Le Syfkany Ancien est une langue qui utilise son propre système d'écriture. Voyez dans le tableau ci-dessous, l'Alphabet du Syfkany Ancien, la prononciation de chaque lettre selon le système de l'Alphabet Phonétique International et une version romanisée de l'Alphabet du Syfkany Ancien. Un quiz est disponible pour tester vos connaissances de cette alphabet."
+                    : "Old Syfkany is a language that uses its own writting system. See in the table below, the Old Syfkany Alphabet, the pronounciation of each letter according to the International Phonetic Alphabet system and a romanised version of the Old Syfkany Alphabet. A quiz is available to test your knowledge on this Alphabet.";
+            }
+            var col1 = document.getElementById('col1');
+            var col2 = document.getElementById('col2');
+            var col3 = document.getElementById('col3');
+            if (col1 && col2 && col3) {
+                if (lang === 'fr') {
+                    col1.textContent = "Lettre en Syfkany Ancien";
+                    col2.textContent = "Lettre Romanisée";
+                    col3.textContent = "API Prononciation";
+                } else {
+                    col1.textContent = "Old Syfkany Letter";
+                    col2.textContent = "Romanised Letter";
+                    col3.textContent = "IPA Pronunciation";
+                }
+            }
+            var quizBtn = document.getElementById('alphabet-quiz-btn');
+            if (quizBtn) {
+                quizBtn.textContent = (lang === 'fr') ? "Quiz sur l'Alphabet" : "Quiz on the Alphabet";
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            var select = document.getElementById('language-select');
+            setPageTitleByLang(select.value);
+            select.addEventListener('change', function() {
+                setPageTitleByLang(this.value);
+            });
+        });
+        </script>
+</head>
+<body>
+    <div class="container" style="text-align:center;max-width:400px;margin:auto;">
+        <div style="margin-bottom:24px;text-align:right;">
+            <label for="language-select" style="font-size:1em;margin-right:8px;">Language:</label>
+            <select id="language-select" style="font-size:1em;padding:4px 8px;">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+    <h1 id="main-title" data-translate-key="appTitle">Writing System in Old Syfkany</h1>
+    <p id="intro-text" style="margin-bottom:32px;">
+        Old Syfkany is a language that uses its own writting system. See in the table below, the Old Syfkany Alphabet, the pronounciation of each letter according to the International Phonetic Alphabet system and a romanised version of the Old Syfkany Alphabet. A quiz is available to test your knowledge on this Alphabet.
+    </p>
+    <table id="syfkany-table" style="width:100%;margin-bottom:32px;border-collapse:collapse;">
+        <thead>
+            <tr style="background:#e0e0e0;font-weight:bold;">
+                <th id="col1">Old Syfkany Letter</th>
+                <th id="col2">Romanised Letter</th>
+                <th id="col3">IPA Pronunciation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/Y.png" alt="Y" class="syf-img"></span></td><td>Y</td><td><a href="https://en.wikipedia.org/wiki/Close_front_unrounded_vowel" target="_blank">/i/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/F.png" alt="F" class="syf-img"></span></td><td>F</td><td><a href="https://en.wikipedia.org/wiki/Voiceless_bilabial_fricative" target="_blank">/ɸ/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/B.png" alt="B" class="syf-img"></span></td><td>B</td><td><a href="https://en.wikipedia.org/wiki/Voiced_bilabial_plosive" target="_blank">/b/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/L.png" alt="L" class="syf-img"></span></td><td>L</td><td><a href="https://en.wikipedia.org/wiki/Voiced_retroflex_lateral_approximant" target="_blank">/l/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/R.png" alt="R" class="syf-img"></span></td><td>R</td><td><a href="https://en.wikipedia.org/wiki/Voiced_retroflex_flap" target="_blank">/ɽ/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/D.png" alt="D" class="syf-img"></span></td><td>D</td><td><a href="https://en.wikipedia.org/wiki/Voiced_alveolar_plosive" target="_blank">/d/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/W.png" alt="W" class="syf-img"></span></td><td>W</td><td><a href="https://en.wikipedia.org/wiki/Voiced_labial%E2%80%93velar_approximant" target="_blank">/w/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/K.png" alt="K" class="syf-img"></span></td><td>K</td><td><a href="https://en.wikipedia.org/wiki/Voiceless_velar_plosive" target="_blank">/k/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/I.png" alt="I" class="syf-img"></span></td><td>I</td><td><a href="https://en.wikipedia.org/wiki/Voiced_palatal_approximant" target="_blank">/j/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/O.png" alt="O" class="syf-img"></span></td><td>O</td><td><a href="https://en.wikipedia.org/wiki/Open-mid_back_rounded_vowel" target="_blank">/ɔ/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/P.png" alt="P" class="syf-img"></span></td><td>P</td><td><a href="https://en.wikipedia.org/wiki/Voiceless_bilabial_plosive" target="_blank">/p/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/H.png" alt="H" class="syf-img"></span></td><td>H</td><td><a href="https://en.wikipedia.org/wiki/Voiceless_uvular_fricative" target="_blank">/χ/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/U.png" alt="U" class="syf-img"></span></td><td>U</td><td><a href="https://en.wikipedia.org/wiki/Close_back_rounded_vowel" target="_blank">/u/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/A.png" alt="A" class="syf-img"></span></td><td>A</td><td><a href="https://en.wikipedia.org/wiki/Open_front_unrounded_vowel" target="_blank">/a/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/E.png" alt="E" class="syf-img"></span></td><td>E</td><td><a href="https://en.wikipedia.org/wiki/Open-mid_front_unrounded_vowel" target="_blank">/ɛ/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/T.png" alt="T" class="syf-img"></span></td><td>T</td><td><a href="https://en.wikipedia.org/wiki/Voiceless_alveolar_plosive" target="_blank">/t/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/N.png" alt="N" class="syf-img"></span></td><td>N</td><td><a href="https://en.wikipedia.org/wiki/Voiced_alveolar_nasal" target="_blank">/n/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/V.png" alt="V" class="syf-img"></span></td><td>V</td><td><a href="https://en.wikipedia.org/wiki/Voiced_bilabial_fricative" target="_blank">/β/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/G.png" alt="G" class="syf-img"></span></td><td>G</td><td><a href="https://en.wikipedia.org/wiki/Voiced_velar_plosive" target="_blank">/g/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/M.png" alt="M" class="syf-img"></span></td><td>M</td><td><a href="https://en.wikipedia.org/wiki/Voiced_bilabial_nasal" target="_blank">/m/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/S.png" alt="S" class="syf-img"></span></td><td>S</td><td><a href="https://en.wikipedia.org/wiki/Voiceless_dental_fricative" target="_blank">/θ/</a></td></tr>
+            <tr><td><span class="syfkany-img-bg"><img src="Left letters/Z.png" alt="Z" class="syf-img"></span></td><td>Z</td><td><a href="https://en.wikipedia.org/wiki/Voiced_dental_fricative" target="_blank">/ð/</a></td></tr>
+        </tbody>
+    </table>
+        <button id="alphabet-quiz-btn" data-translate-key="leftBtn" onclick="location.href='left-quiz.html'" class="start-btn" style="width:80%;">Quiz on the Alphabet</button>
+        <footer style="margin-top:32px;font-size:0.95em;color:#666;text-align:center;width:100%;background:#fff;border-top:1px solid #e0e7ff;padding:12px 0 8px 0;">
+            <span>
+                This project is licensed under the <a href="LICENSE" target="_blank">GNU General Public License v3.0</a>.<br>
+                &copy; 2025 <a href="https://github.com/ThomasLrns" target="_blank">ThomasLrns</a>
+            </span>
+        </footer>
+    </div>
+</body>
+</html>
